@@ -1,0 +1,78 @@
+type: "orchestration"
+version: "1.0"
+pipeline:
+  components:
+    Start:
+      type: "start"
+      transitions:
+        unconditional:
+        - "Python Pushdown"
+      parameters:
+        componentName: "Start"
+    Python Pushdown:
+      type: "python-pushdown"
+      parameters:
+        componentName: "Python Pushdown"
+        warehouse: "[Environment Default]"
+        externalAccessIntegrations:
+        pythonVersion: "3.10"
+        packages:
+        scriptLocation: "Component"
+        pythonScript: "print (f\"Lorem ipsum dolor sit amet, consectetur adipiscing\
+          \ elit. Curabitur at mauris facilisis, consequat est et, mattis nisl. Donec\
+          \ a suscipit turpis. Nunc dignissim neque a pulvinar vestibulum. Orci varius\
+          \ natoque penatibus et magnis dis parturient montes, nascetur ridiculus\
+          \ mus. Suspendisse fermentum felis in accumsan vulputate. Nulla at porttitor\
+          \ mi, a sagittis elit. Suspendisse eu ante fringilla, convallis ligula nec,\
+          \ posuere est. Sed ac pellentesque sapien. Maecenas sed molestie urna. Proin\
+          \ ante enim, euismod at fermentum venenatis, sodales non sem. Quisque dignissim\
+          \ malesuada eros ut auctor. Aliquam vel molestie nisi. Nulla facilisi. Vivamus\
+          \ pulvinar eget sem sit amet tristique. Cras mauris odio, ultricies ac pretium\
+          \ id, pharetra sit amet massa. In convallis dignissim tortor, sed congue\
+          \ nisl malesuada at. Donec posuere, massa eu pretium iaculis, nisl ex posuere\
+          \ lectus, eu accumsan ante justo non nisi. Nunc vulputate sem non quam dignissim\
+          \ maximus. Curabitur tincidunt purus vel risus tempor finibus. Nunc enim\
+          \ augue, molestie vitae urna a, dignissim pulvinar quam. Proin in volutpat\
+          \ dui. Etiam fermentum aliquam enim tempus faucibus. Vivamus suscipit, nulla\
+          \ sit amet volutpat interdum, enim elit fermentum magna, eu faucibus massa\
+          \ enim gravida dolor. Vestibulum malesuada pretium magna vitae malesuada.\
+          \ Proin nibh odio, tempus vitae nibh sagittis, iaculis convallis ligula.\
+          \ Etiam mattis ex lacus, a lacinia felis ultrices eget. Aliquam at hendrerit\
+          \ ex, eu imperdiet libero. Integer rhoncus sed odio sed pretium. Phasellus\
+          \ aliquet luctus arcu. Vivamus a felis non sem laoreet gravida. Orci varius\
+          \ natoque penatibus et magnis dis parturient montes, nascetur ridiculus\
+          \ mus. Donec consequat diam dui, in laoreet neque condimentum ac. Nam id\
+          \ mauris lectus. Orci varius natoque penatibus et magnis dis parturient\
+          \ montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur\
+          \ adipiscing elit. Curabitur luctus gravida eros a ullamcorper. Sed lobortis,\
+          \ ligula aliquet dictum scelerisque, mauris nulla sodales diam, eu laoreet\
+          \ metus justo in sem. Interdum et malesuada fames ac ante ipsum primis in\
+          \ faucibus. Morbi condimentum varius fermentum. Donec tristique arcu at\
+          \ accumsan facilisis. Cras elit augue, mollis quis feugiat dignissim, viverra\
+          \ sed lectus. Ut nisl mauris, tempor nec viverra at, euismod tincidunt sem.\
+          \ Ut sollicitudin, enim quis imperdiet consectetur, lacus lacus fermentum\
+          \ libero, a sagittis arcu diam sed justo. Proin at aliquam purus. Maecenas\
+          \ tempus, ex eget suscipit pellentesque, velit velit suscipit ligula, ut\
+          \ commodo mauris nisi ut justo. Donec eu ullamcorper leo. Mauris at mauris\
+          \ ex. Nulla orci orci, efficitur eget lorem eu, semper tristique libero.\
+          \ Morbi sit amet nulla sed dui fermentum aliquet. Praesent in nunc eros.\
+          \ Duis interdum nulla ac nisl efficitur consectetur. Aliquam congue elit\
+          \ et dui dictum, non consectetur eros semper. Curabitur a erat sagittis,\
+          \ blandit mauris in, consequat ex. Vestibulum mattis interdum mauris ut\
+          \ elementum. Integer hendrerit sapien vel arcu laoreet tincidunt. Mauris\
+          \ mollis pretium tellus, non maximus est luctus a.\")"
+        scriptTimeout: "360"
+      postProcessing:
+        updateScalarVariables:
+design:
+  components:
+    Start:
+      position:
+        x: 0
+        "y": 0
+      tempMetlId: 1
+    Python Pushdown:
+      position:
+        x: 120
+        "y": 0
+      tempMetlId: 2
